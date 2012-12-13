@@ -31,7 +31,7 @@ describe "UserPages" do
 			end
 		end
 
-		describe "widh valid data" do
+		describe "with valid data" do
 			before do
 				fill_in "Name", with: "Example User"
 				fill_in "Email", with: "user@example.com"
@@ -42,6 +42,15 @@ describe "UserPages" do
 			it "should create a user" do
 				expect { click_button submit }.to change(User, :count).by(1)
 			end
+
+			describe "after saving the user" do
+        		before { click_button submit }
+        		let(:user) { User.find_by_email('user@example.com') }
+
+        		it { should have_selector('title', text: user.name) }
+        		it { should have_selector('div.alert.alert-success', text: 'Welcome') }
+        		it {should have_link('Sign out')}
+      		end
 		end
 	end
 end
