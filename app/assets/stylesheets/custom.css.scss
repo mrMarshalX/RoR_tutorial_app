@@ -1,6 +1,6 @@
 @import "bootstrap";
 
-/* variables */
+/* VARIABLES */
 
 $grayMediumLight: #eaeaea;
 
@@ -11,7 +11,7 @@ $grayMediumLight: #eaeaea;
 }
 
 
-/* universal */
+/* UNIVERSAL */
 
 html {
 	overflow-y: scroll;
@@ -37,7 +37,7 @@ textarea {
 	margin-bottom: 10px;
 }
 
-/* typography */
+/* TYPOGRAPHY */
 
 h1, h2, h3, h4, h5, h6 {
   line-height: 1;
@@ -185,5 +185,31 @@ input {
 		&:last-child {
 			border-bottom:1px solid $grayMediumLight;
 		}
+	}
+}
+
+/* MICROPOSTS */
+
+.microposts {
+	list-style:none;
+	margin:10px 0 0 0;
+	li {
+		padding:10px 0;
+		border-top:1px solid #e8e8e8;
+	}
+}
+
+.content {
+	display:block;
+}
+
+.timestamp {
+	color:C0C0C0;
+}
+
+aside {
+	textarea{
+		height:100px;
+		margin-bottom:5px;
 	}
 }
